@@ -1,0 +1,110 @@
+.main-posts {
+  width: 70vw;
+  display: grid;
+  grid-template-areas:
+    "first second"
+    "first third";
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  margin: 30px auto 0;
+  gap: 1vw 3vw;
+
+  & .post {
+    &:nth-of-type(1) {
+      grid-area: first;
+      width: 100%;
+      padding-right: 3vw;
+      border-right: 1px solid rgba(0, 0, 0, 0.377);
+
+      & .post-data {
+          font-size: 1.3rem;
+
+          & .post-author {
+              font-size: 1rem;
+          }
+      }
+
+      & .post-title {
+          font-size: 2.4rem;
+
+          & ~ p {
+              font-size: 1.5rem;
+          }
+      }
+    }
+
+    &:nth-of-type(2) {
+      grid-area: second;
+      width: 100%;
+    }
+
+    &:nth-of-type(3) {
+      grid-area: third;
+      width: 100%;
+    }
+
+    & .post-data {
+
+      @include flex(row, space-between, center);
+      font-size: 1rem;
+      margin-top: 0.5rem;
+
+      & .post-date {
+
+        opacity: 0.5;
+
+        & .time-to-read {
+            position: relative;
+            margin-left: 30px;
+
+            &::before {
+                content: '';
+                position: absolute;
+                background-color: black;
+                width: 2px;
+                height: 2px;
+                border-radius: 50%;
+                top: 45%;
+                left: -20%;
+            }
+        }
+      }
+        
+
+        & .post-author {
+            text-transform: uppercase;
+            position: relative;
+            font-size: 0.8rem;
+
+            &::before {
+                position: absolute;
+                content: '';
+                width: 50%;
+                height: 1px;
+                top: 50%;
+                left: -100%;
+                background-color: black;
+            }
+        }
+    }
+
+    & .post-image {
+      & img {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    & .post-title {
+        text-transform: capitalize;
+        font-size: 1.3rem;
+        margin-top: 1rem;
+
+        & ~ p {
+            font-size: 1rem;
+            margin-top: 1rem;
+        }
+    }
+
+  }
+}

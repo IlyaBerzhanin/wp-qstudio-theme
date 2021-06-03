@@ -1,0 +1,11 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@import "abstract/mixins.scss";
+
+@import "layout/header.scss";
+@import "layout/home.scss";
+@import "layout/footer.scss";

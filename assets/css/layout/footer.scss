@@ -1,0 +1,42 @@
+.footer {
+    width: 80vw;
+
+    & #categories-3 {
+        background-color: rgb(240, 230, 240);
+        list-style: none;
+
+        & .widgettitle {
+            display: none;
+        }
+
+        & ul {
+            @include flex(row, space-between, center);
+
+            & .cat-item {
+                padding: 20px;
+                list-style: none;
+
+                & a {
+                    text-transform: uppercase;
+                    text-decoration: none;
+                    color: black;
+                }
+
+                & .children {
+                    @include flex(column, space-between, flex-end);
+                    
+
+                    & .cat-item {
+                        padding: 0;
+                        margin-top: 15px;
+
+                        & a {
+                            text-transform: capitalize;
+                        }
+
+                    }
+                }
+            }
+        }
+    }
+}
