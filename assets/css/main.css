@@ -115,7 +115,7 @@
   width: 100%;
 }
 
-.main-posts .post .post-data {
+.post-data {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -124,16 +124,16 @@
   margin-top: 0.5rem;
 }
 
-.main-posts .post .post-data .post-date {
+.post-data .post-date {
   opacity: 0.5;
 }
 
-.main-posts .post .post-data .post-date .time-to-read {
+.post-data .post-date .time-to-read {
   position: relative;
   margin-left: 30px;
 }
 
-.main-posts .post .post-data .post-date .time-to-read::before {
+.post-data .post-date .time-to-read::before {
   content: '';
   position: absolute;
   background-color: black;
@@ -144,36 +144,84 @@
   left: -20%;
 }
 
-.main-posts .post .post-data .post-author {
+.post-data .post-author {
   text-transform: uppercase;
   position: relative;
   font-size: 0.8rem;
 }
 
-.main-posts .post .post-data .post-author::before {
+.post-data .post-author::before {
   position: absolute;
   content: '';
   width: 50%;
   height: 1px;
   top: 50%;
-  left: -100%;
+  left: -80%;
   background-color: black;
 }
 
-.main-posts .post .post-image img {
+.post-image img {
   width: 100%;
   height: auto;
 }
 
-.main-posts .post .post-title {
+.post-title {
   text-transform: capitalize;
   font-size: 1.3rem;
   margin-top: 1rem;
 }
 
-.main-posts .post .post-title ~ p {
+.post-title ~ p {
   font-size: 1rem;
   margin-top: 1rem;
+}
+
+.trends {
+  width: 70vw;
+  margin: 5rem auto;
+  overflow: hidden;
+}
+
+.trends-header {
+  padding: 1.4rem 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid gainsboro;
+  border-bottom: 1px solid gainsboro;
+}
+
+.trends-header .header-title {
+  text-transform: uppercase;
+  font-size: 1.5rem;
+}
+
+.trends-header .header-action {
+  font-size: 1rem;
+  color: black;
+}
+
+.trends .slider-arrows {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1.5rem;
+}
+
+.trends .trending-posts {
+  display: flex;
+  width: 150vw;
+  margin-top: 1.5rem;
+}
+
+.trends .trending-posts .trending-post {
+  margin-left: 5rem;
+}
+
+.trends .trending-posts .trending-post:nth-last-of-type(5) {
+  margin-left: 0;
 }
 
 .footer {
