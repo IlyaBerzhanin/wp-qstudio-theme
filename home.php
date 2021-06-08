@@ -112,6 +112,8 @@ wp_reset_postdata(); // сброс
 
 </div>
 
+<?php require 'components/subscribe.php'; ?>
+
 <?php get_footer();?>
 
 

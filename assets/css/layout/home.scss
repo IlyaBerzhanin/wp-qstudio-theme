@@ -107,8 +107,10 @@
 
 .trends {
   width: 70vw;
-  margin: 5rem auto;
+  margin: 5rem auto 0;
   overflow: hidden;
+  border-bottom: 1px solid gainsboro;
+  padding-bottom: 3rem;
 
   &-header {
     padding: 1.4rem 0;
