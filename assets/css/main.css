@@ -134,7 +134,7 @@
 }
 
 .post-data .post-date .time-to-read::before {
-  content: '';
+  content: "";
   position: absolute;
   background-color: black;
   width: 2px;
@@ -152,7 +152,7 @@
 
 .post-data .post-author::before {
   position: absolute;
-  content: '';
+  content: "";
   width: 50%;
   height: 1px;
   top: 50%;
@@ -212,12 +212,13 @@
 
 .trends .trending-posts {
   display: flex;
-  width: 150vw;
+  width: 4000px;
   margin-top: 1.5rem;
 }
 
 .trends .trending-posts .trending-post {
-  margin-left: 5rem;
+  margin-left: 8vw;
+  width: 18vw;
 }
 
 .trends .trending-posts .trending-post:nth-last-of-type(5) {
@@ -225,12 +226,86 @@
 }
 
 .footer {
-  width: 80vw;
+  width: 70vw;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.footer .subscriptForm {
+  display: flex;
+  position: relative;
+  flex-grow: 1;
+}
+
+.footer .subscriptForm .email-label {
+  display: flex;
+  flex-direction: column;
+  text-transform: capitalize;
+  font-size: 1.5rem;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.footer .subscriptForm .email-label .subscriptEmail-input {
+  outline: none;
+  margin-top: 2rem;
+  font-size: 1rem;
+  padding: 0.5rem;
+  border: none;
+  border-bottom: 2px solid black;
+  width: 100%;
+}
+
+.footer .subscriptForm .submit-button {
+  font-size: 1rem;
+  text-transform: uppercase;
+  position: absolute;
+  top: 75px;
+  right: 0;
+  border: none;
+  transition: all 0.3s ease;
+  background-color: white;
+}
+
+.footer .subscriptForm .submit-button .button-title {
+  z-index: 2;
+  transition: all 0.3s ease;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 0.5rem 1.5rem;
+}
+
+.footer .subscriptForm .submit-button .button-title::before {
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  z-index: -100;
+  transition: all 0.3s ease;
+}
+
+.footer .subscriptForm .submit-button:hover {
+  cursor: pointer;
+}
+
+.footer .subscriptForm .submit-button:hover .button-title {
+  color: white;
+}
+
+.footer .subscriptForm .submit-button:hover .button-title::before {
+  background-color: yellowgreen;
+  height: 100%;
 }
 
 .footer #categories-3 {
   background-color: #f0e6f0;
   list-style: none;
+  flex-grow: 1;
+  margin-left: 10vw;
 }
 
 .footer #categories-3 .widgettitle {
@@ -253,6 +328,8 @@
   text-transform: uppercase;
   text-decoration: none;
   color: black;
+  font-size: 1rem;
+  pointer-events: none;
 }
 
 .footer #categories-3 ul .cat-item .children {
@@ -265,8 +342,36 @@
 .footer #categories-3 ul .cat-item .children .cat-item {
   padding: 0;
   margin-top: 15px;
+  transition: all 0.3s ease;
+  position: relative;
 }
 
 .footer #categories-3 ul .cat-item .children .cat-item a {
   text-transform: capitalize;
+}
+
+.footer #categories-3 ul .cat-item .children .cat-item::before, .footer #categories-3 ul .cat-item .children .cat-item::after {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 2px;
+  top: 130%;
+  left: 0;
+  transition: all 0.3s ease;
+}
+
+.footer #categories-3 ul .cat-item .children .cat-item::before {
+  background-color: black;
+}
+
+.footer #categories-3 ul .cat-item .children .cat-item::after {
+  background-color: white;
+}
+
+.footer #categories-3 ul .cat-item .children .cat-item:hover {
+  cursor: pointer;
+}
+
+.footer #categories-3 ul .cat-item .children .cat-item:hover::after {
+  width: 0;
 }

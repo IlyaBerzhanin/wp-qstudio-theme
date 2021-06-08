@@ -8,6 +8,30 @@ add_action('after_setup_theme', 'register_theme_header_logo');
 add_action('after_setup_theme', 'allowPostThumbnails');
 add_action( 'widgets_init', 'register_my_widgets' );
 
+add_action('wp_ajax_send_mail', 'send_mail');
+add_action('wp_ajax_nopriv_send_mail', 'send_mail');
+
+function send_mail() {
+    $userEmail = $_POST['userEmail'];
+
+    $to = get_option('admin_email');
+    $subject = 'Receiving subscribers emails...';
+    $message = 'You have received another email!';
+
+    remove_all_filters( 'wp_mail_from' );
+    remove_all_filters( 'wp_mail_from_name' );
+
+    $headers = array(
+        'From: Me Myself <wordpress@first-test.com>',
+        'content-type: text/html',
+        'Cc: John Q Codex <jqc@wordpress.org>',
+        'Cc: iluvwp@wordpress.org', // тут можно использовать только простой email адрес
+    );
+    
+    wp_mail( $to, $subject, $message, $headers );
+    wp_die();
+}
+
 
 function add_theme_styles() {
     wp_enqueue_style( 'font-awesome', "//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css");
@@ -16,7 +40,8 @@ function add_theme_styles() {
 }
 
 function add_theme_scripts() {
-    wp_enqueue_script( 'init', get_template_directory_uri(  ) . '/assets/js/init.js' );
+    wp_enqueue_script( 'jquery', get_template_directory_uri(  ) . '/assets/js/jquery-3.6.0.js' );
+    wp_enqueue_script( 'init', get_template_directory_uri(  ) . '/assets/js/init.js' );    
 }
 
 function register_theme_header_menu() {
@@ -51,6 +76,6 @@ function register_my_widgets(){
 }
 
 function allowPostThumbnails() {
-    add_theme_support( 'post-thumbnails', array('post') );
+    add_theme_support( 'post-thumbnails', array('post', 'gifts') );
 }
 
