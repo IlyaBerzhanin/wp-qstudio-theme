@@ -4,11 +4,22 @@
   box-sizing: border-box;
 }
 
+@font-face {
+  font-family: roboto;
+  src: url("../fonts/roboto/Roboto-Black.ttf");
+}
+
+@font-face {
+  font-family: sprat;
+  src: url("../fonts/roboto/Sprat-CondensedBold.otf");
+}
+
 .subscription-block {
   background-color: yellowgreen;
   width: 70vw;
   margin: 0 auto;
   padding: 4rem;
+  border-bottom: 1px solid gainsboro;
 }
 
 .subscription-block .subscription {
@@ -246,6 +257,7 @@
 
 .trends-header .header-title {
   text-transform: uppercase;
+  font-family: sprat;
   font-size: 1.5rem;
 }
 

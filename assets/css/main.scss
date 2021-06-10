@@ -4,6 +4,8 @@
   box-sizing: border-box;
 }
 
+@import "abstract/fonts.scss";
+@import "abstract/vars.scss";
 @import "abstract/mixins.scss";
 
 @import "components/subscribe.scss";
