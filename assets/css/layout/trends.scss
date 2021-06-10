@@ -1,0 +1,59 @@
+.trends {
+    width: 70vw;
+    margin: 5rem auto 0;
+    overflow: hidden;
+    border-bottom: 1px solid $devideLineColor;
+    padding-bottom: 3rem;
+  
+    &-header {
+      padding: 1.4rem 0;
+      @include flex(row, space-between, center);
+      border-top: 1px solid $devideLineColor;
+      border-bottom: 1px solid $devideLineColor;
+  
+      & .header-title {
+        text-transform: uppercase;
+        @include font($titleFont, 1.5rem, $mainTextColor);
+      }
+  
+      & .header-action {
+        @include font($titleFont, 1rem, $mainTextColor);
+      }
+    }
+  
+    & .slider-arrows {
+      @include flex(row, space-between, center);
+      margin-top: 1.5rem;
+    }
+  
+    & .trending-posts {
+      display: flex;
+      width: 4000px;
+      margin-top: 1.5rem;
+  
+      & .trending-post {
+        margin-left: 8vw;
+        width: 18vw;
+
+        & .post-data {
+
+          & .post-date {
+            @include font($contentFont, 0.7rem, $secondaryTextColor);
+          }
+
+          & .post-author {
+            @include font($contentFont, 0.7rem, $mainTextColor);
+          }
+
+        }
+
+        & .post_title {
+          @include font($titleFont, 2rem, $mainTextColor);
+        }
+  
+        &:nth-last-of-type(5) {
+          margin-left: 0;
+        }
+      }
+    }
+  }

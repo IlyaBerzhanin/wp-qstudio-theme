@@ -1,9 +1,11 @@
 .footer {
     width: 70vw;
+    
+
+  & .interactive-block {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-
     & .subscriptForm {
 
         display: flex;
@@ -14,7 +16,7 @@
             display: flex;
             flex-direction: column;
             text-transform: capitalize;
-            font-size: 1.5rem;
+            @include font($titleFont, 1.5rem, $mainTextColor);
             width: 100%;
             margin-top: 1rem;
 
@@ -32,9 +34,10 @@
         & .submit-button {
 
             font-size: 1rem;
+            @include font($contentFont, 1rem, $mainTextColor);
             text-transform: uppercase;            
             position: absolute;
-            top: 75px;
+            top: 74px;
             right: 0;
             border: none;
             transition: all 0.3s ease;
@@ -67,7 +70,7 @@
                     color: white;
 
                     &::before {
-                        background-color: yellowgreen;   
+                        background-color: $mainTextColor;   
                         height: 100%;                                         
                     }
                 }
@@ -76,7 +79,6 @@
     }
 
     & #categories-3 {
-        background-color: rgb(240, 230, 240);
         list-style: none;
         flex-grow: 1;
         margin-left: 10vw;
@@ -95,8 +97,7 @@
                 &  a {
                     text-transform: uppercase;
                     text-decoration: none;
-                    color: black;
-                    font-size: 1rem;
+                    @include font($titleFont, 1rem, $mainTextColor);
                     pointer-events: none;
                 }
 
@@ -112,6 +113,7 @@
 
                         & a {
                             text-transform: capitalize;
+                            @include font($contentFont, 1rem, $secondaryTextColor);
                         }
 
                         &::before, &::after {
@@ -145,4 +147,25 @@
             }
         }
     }
+  }
+
+  & .useless-info-block {
+      @include flex(row, space-between, center);
+      margin-top: 2rem;
+
+      & a {
+          pointer-events: none;
+      }
+
+      & .info {
+          list-style: none;
+          @include flex(row, space-between, center);
+
+          &-item {
+              padding: 2rem;
+              @include font($contentFont, 1rem, $secondaryTextColor);
+              text-transform: capitalize;
+          }
+      }
+  }
 }

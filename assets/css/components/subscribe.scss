@@ -1,9 +1,8 @@
 .subscription-block {
-    background-color: yellowgreen;
     width: 70vw;
     margin: 0 auto;
     padding: 4rem;
-    border-bottom: 1px solid gainsboro;
+    border-bottom: 1px solid $devideLineColor;
 
     & .subscription {
         width: 70%;
@@ -14,11 +13,11 @@
 
         & .subscription-title {
             text-transform: uppercase;
-            font-size: 2rem;
+            @include font($titleFont, 2rem, $mainTextColor);
         }
 
         & .subscription-description {
-            font-size: 1rem;
+            @include font($contentFont, 1rem, $secondaryTextColor);
             line-height: 1.5rem;
             margin-top: 2rem;
             text-align: center;
@@ -27,22 +26,25 @@
         & .subscription-actions {
             width: 100%;
             display: flex;
-            background-color: blueviolet;
             margin-top: 2rem;
 
             & .action-button {
                 text-transform: capitalize;
                 padding: 1rem 3rem;
-                font-size: 1.4rem;
+                @include font($titleFont, 1.4rem, $mainTextColor);
                 text-decoration: none;
-                color: black;
-                background-color: burlywood;
                 border: 2px solid black;
                 flex-grow: 1;
                 text-align: center;
+                transition: all 0.3s ease;
 
                 &:nth-child(2) {
                     margin-left: 4rem;
+                }
+
+                &:hover {
+                    background-color: $mainTextColor;
+                    color: white;
                 }
             }
         }

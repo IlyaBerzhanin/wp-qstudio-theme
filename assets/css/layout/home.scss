@@ -14,21 +14,22 @@
       grid-area: first;
       width: 100%;
       padding-right: 3vw;
-      border-right: 1px solid rgba(0, 0, 0, 0.377);
+      border-right: 1px solid $devideLineColor;
 
       & .post-data {
+        @include font($contentFont, 1.3rem, $secondaryTextColor);
         font-size: 1.3rem;
 
         & .post-author {
-          font-size: 1rem;
+          @include font($contentFont, 1rem, $mainTextColor);
         }
       }
 
       & .post-title {
-        font-size: 2.4rem;
+        @include font($titleFont, 2.4rem, $mainTextColor);
 
         & ~ p {
-          font-size: 1.5rem;
+          @include font($contentFont, 1.5rem, $secondaryTextColor);
         }
       }
     }
@@ -47,7 +48,7 @@
 
 .post-data {
   @include flex(row, space-between, center);
-  font-size: 1rem;
+  @include font($contentFont, 1rem, $secondaryTextColor);
   margin-top: 0.5rem;
 
   & .post-date {
@@ -65,7 +66,7 @@
         height: 2px;
         border-radius: 50%;
         top: 45%;
-        left: -20%;
+        left: -30%;
       }
     }
   }
@@ -73,7 +74,7 @@
   & .post-author {
     text-transform: uppercase;
     position: relative;
-    font-size: 0.8rem;
+    @include font($contentFont, 0.8rem, $mainTextColor);
 
     &::before {
       position: absolute;
@@ -96,57 +97,13 @@
 
 .post-title {
   text-transform: capitalize;
-  font-size: 1.3rem;
+  @include font($titleFont, 1.3rem, $mainTextColor);
   margin-top: 1rem;
 
   & ~ p {
-    font-size: 1rem;
+    @include font($contentFont, 1rem, $secondaryTextColor);
     margin-top: 1rem;
   }
 }
 
-.trends {
-  width: 70vw;
-  margin: 5rem auto 0;
-  overflow: hidden;
-  border-bottom: 1px solid gainsboro;
-  padding-bottom: 3rem;
 
-  &-header {
-    padding: 1.4rem 0;
-    @include flex(row, space-between, center);
-    border-top: 1px solid gainsboro;
-    border-bottom: 1px solid gainsboro;
-
-    & .header-title {
-      text-transform: uppercase;
-      font-family: $titleFont;
-      font-size: 1.5rem;
-    }
-
-    & .header-action {
-      font-size: 1rem;
-      color: black;
-    }
-  }
-
-  & .slider-arrows {
-    @include flex(row, space-between, center);
-    margin-top: 1.5rem;
-  }
-
-  & .trending-posts {
-    display: flex;
-    width: 4000px;
-    margin-top: 1.5rem;
-
-    & .trending-post {
-      margin-left: 8vw;
-      width: 18vw;
-
-      &:nth-last-of-type(5) {
-        margin-left: 0;
-      }
-    }
-  }
-}

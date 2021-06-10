@@ -4,6 +4,11 @@
   box-sizing: border-box;
 }
 
+.container {
+  max-width: 70vw;
+  margin: 0 auto;
+}
+
 @import "abstract/fonts.scss";
 @import "abstract/vars.scss";
 @import "abstract/mixins.scss";
@@ -12,4 +17,5 @@
 
 @import "layout/header.scss";
 @import "layout/home.scss";
+@import "layout/trends.scss";
 @import "layout/footer.scss";

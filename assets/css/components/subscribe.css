@@ -1,5 +1,4 @@
 .subscription-block {
-  background-color: yellowgreen;
   width: 70vw;
   margin: 0 auto;
   padding: 4rem;
@@ -29,7 +28,6 @@
 .subscription-block .subscription .subscription-actions {
   width: 100%;
   display: flex;
-  background-color: blueviolet;
   margin-top: 2rem;
 }
 
@@ -39,7 +37,6 @@
   font-size: 1.4rem;
   text-decoration: none;
   color: black;
-  background-color: burlywood;
   border: 2px solid black;
   flex-grow: 1;
   text-align: center;

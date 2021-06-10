@@ -1,7 +1,6 @@
 .footer {
-  width: 100%;
-}
-
-.footer-nav {
-  background-color: aqua;
+  width: 70vw;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }

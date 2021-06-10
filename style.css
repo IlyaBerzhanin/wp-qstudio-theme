@@ -8,10 +8,8 @@ Theme Name: Q.Studio
 	 box-sizing: border-box;
  }
 
- body {
-	background: #cddb98;
-	font-size: 10px;
-	
+html  {
+	font-size: 15px;
 }
 
 .header, .footer {
