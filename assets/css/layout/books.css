@@ -1,0 +1,9 @@
+.page-title {
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+
+.page-subtitle {
+  text-transform: uppercase;
+  @i;
+}

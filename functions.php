@@ -11,7 +11,45 @@ add_action( 'widgets_init', 'register_my_widgets' );
 add_action('wp_ajax_send_mail', 'send_mail');
 add_action('wp_ajax_nopriv_send_mail', 'send_mail');
 
-function send_mail() {
+add_action('init', 'register_post_types');
+
+
+function register_post_types() {
+
+    register_post_type( 'books', array(
+       'labels'             => array(
+             'name'               => 'books', // Основное название типа записи
+             'singular_name'      => 'book', // отдельное название записи типа Book
+             'add_new'            => 'Add new book',
+             'add_new_item'       => 'Add new book',
+             'edit_item'          => 'Edit book',
+             'new_item'           => 'New book',
+             'view_item'          => 'View Book',
+             'search_items'       => 'Search Book',
+             'not_found'          => 'No books found',
+             'not_found_in_trash' => 'No books in trash',
+             'parent_item_colon'  => '',
+             'menu_name'          => 'Books'
+ 
+           ),
+         'description'        =>  'description ...' ,
+         'public'             => true,
+         'publicly_queryable' => true,
+         'show_ui'            => true,
+         'show_in_menu'       => true,
+         'query_var'          => true,
+         'rewrite'            => true,
+         'capability_type'    => 'post',
+         'has_archive'        => true,
+         'hierarchical'       => false,
+         'menu_position'      => 21,
+         'supports'           => array('title','editor','thumbnail','excerpt', 'custom-fields'),
+     'taxonomies' => array('category', 'post_tag')
+    ) ) ;
+  }
+
+
+  function send_mail() {
     $userEmail = $_POST['userEmail'];
 
     $to = get_option('admin_email');
@@ -31,7 +69,6 @@ function send_mail() {
     wp_mail( $to, $subject, $message, $headers );
     wp_die();
 }
-
 
 function add_theme_styles() {
     wp_enqueue_style( 'font-awesome', "//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css");
@@ -76,6 +113,6 @@ function register_my_widgets(){
 }
 
 function allowPostThumbnails() {
-    add_theme_support( 'post-thumbnails', array('post', 'gifts') );
+    add_theme_support( 'post-thumbnails', array('post', 'gifts', 'books') );
 }
 

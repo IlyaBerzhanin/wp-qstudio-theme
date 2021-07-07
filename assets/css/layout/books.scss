@@ -1,0 +1,65 @@
+.page-title {
+    @include font($titleFont, 3rem, $mainTextColor);
+    text-transform: uppercase;
+    margin-top: 3rem;
+}
+
+.page-subtitle {
+    text-transform: uppercase;
+    @include font($titleFont, 1.7rem, $secondaryTextColor);
+    margin-top: 3rem;
+    padding: 1.5rem 0 1.5rem;
+    border-top: 1px solid $devideLineColor;
+    border-bottom: 1px solid $devideLineColor;
+}
+
+.books-block {
+    margin-top: 3rem;
+
+    & .book {
+        list-style: none;      
+        @include flex(row, flex-start, flex-start);  
+        margin-top: 4rem;
+        transition: all 0.3s ease;
+
+        & .book-info-block {
+            @include flex(column, space-between, flex-start);
+            margin-left: 4rem;
+
+            & .book-author {
+                @include font($contentFont, 1rem, $secondaryTextColor);
+                text-transform: uppercase;
+                margin-top: 1rem;
+            }
+
+            & .book-title {
+                @include font($titleFont, 2rem, $mainTextColor);
+                text-transform: capitalize;
+                margin-top: 0.5rem;
+            }
+
+            & .book-description {
+                margin-top: 0.5rem;
+                @include font($contentFont, 1.4rem, $secondaryTextColor);
+            }
+
+            & .book-price {
+                margin-top: 0.5rem;
+                @include font($titleFont, 2rem, $mainTextColor);
+            }
+
+            & .book-purchase-button {
+                margin-top: 1rem;
+            }
+
+        }
+    }
+}
+
+.book-image-block {
+    & img {
+            width: 200px;
+            height: 300px;
+            display: block;
+        }
+}

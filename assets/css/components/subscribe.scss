@@ -28,7 +28,12 @@
             display: flex;
             margin-top: 2rem;
 
-            & .action-button {
+           
+        }
+    }
+}
+
+ .action-button {
                 text-transform: capitalize;
                 padding: 1rem 3rem;
                 @include font($titleFont, 1.4rem, $mainTextColor);
@@ -47,6 +52,3 @@
                     color: white;
                 }
             }
-        }
-    }
-}
